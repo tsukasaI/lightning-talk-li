@@ -2,6 +2,6 @@ package sleep
 
 import "time"
 
-func SleepSec(d time.Duration) {
+func Duration(d time.Duration) {
 	time.Sleep(d)
 }

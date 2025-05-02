@@ -11,7 +11,7 @@ import (
 // GOEXPERIMENT=synctest go test ./sleep -v -run TestSleepOneSecFlaky
 func TestSleepOneSecFlaky(t *testing.T) {
 	before := time.Now()
-	sleep.SleepSec(1 * time.Second)
+	sleep.Duration(1 * time.Second)
 	after := time.Now()
 
 	if d := after.Sub(before); d != 1*time.Second {
@@ -22,7 +22,7 @@ func TestSleepOneSecFlaky(t *testing.T) {
 // GOEXPERIMENT=synctest go test ./sleep -v -run TestSleepOneSecProper
 func TestSleepOneSecProper(t *testing.T) {
 	before := time.Now()
-	sleep.SleepSec(1 * time.Second)
+	sleep.Duration(1 * time.Second)
 	after := time.Now()
 
 	if d := after.Sub(before); d < 1*time.Second {
@@ -36,7 +36,7 @@ func TestSleepOneSecMultipleCases(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(fmt.Sprintf("%v", tt), func(t *testing.T) {
 			before := time.Now()
-			sleep.SleepSec(tt)
+			sleep.Duration(tt)
 			after := time.Now()
 
 			if d := after.Sub(before); d < 1*time.Second {
@@ -50,7 +50,7 @@ func TestSleepOneSecMultipleCases(t *testing.T) {
 func TestSleepWithSynctest(t *testing.T) {
 	synctest.Run(func() {
 		before := time.Now()
-		sleep.SleepSec(1 * time.Second)
+		sleep.Duration(1 * time.Second)
 		after := time.Now()
 
 		if d := after.Sub(before); d != 1*time.Second {
@@ -66,7 +66,7 @@ func TestSleepOneSecMultipleCasesWithSynctest(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tt), func(t *testing.T) {
 			synctest.Run(func() {
 				before := time.Now()
-				sleep.SleepSec(tt)
+				sleep.Duration(tt)
 				after := time.Now()
 
 				if d := after.Sub(before); d < 1*time.Second {
