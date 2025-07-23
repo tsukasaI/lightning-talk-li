@@ -20,7 +20,7 @@ colorSchema: dark
 Modern Browser Automation Made Simple
 
 <div class="pt-8">
-  <span class="text-sm text-gray-300">Created by Claude</span>
+  <span class="text-sm text-gray-300">Tsukasa INOUE</span>
 </div>
 
 <div class="pt-4">
@@ -209,6 +209,10 @@ Perfect match for Go developers
 
 Simple Go web server for testing demonstrations
 
+<div class="grid grid-cols-3 gap-6 mt-4">
+
+<div class="col-span-2">
+
 ```go
 func main() {
     http.HandleFunc("/", handleHome)
@@ -232,8 +236,16 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-<div class="bg-blue-600 bg-opacity-40 p-4 rounded-lg mt-4 text-white border border-blue-400">
+</div>
+
+<div class="flex items-center">
+
+<div class="bg-blue-600 bg-opacity-40 p-4 rounded-lg text-white border border-blue-400">
 <strong>Key elements:</strong> Simple HTTP server serving HTML with interactive button and text display for testing. Go unit tests alone cannot test the text-display content updating since it requires browser JavaScript execution.
+</div>
+
+</div>
+
 </div>
 
 ---
@@ -381,10 +393,10 @@ Let's see our tests in action
 <div>
 <h3 class="text-lg font-bold mb-4 text-blue-600">Demo Steps</h3>
 <ol class="text-sm space-y-2">
-<li>1. Start the Go server</li>
-<li>2. Open the web app</li>
-<li>3. Run Playwright tests</li>
-<li>4. See automated testing magic!</li>
+<li>Start the Go server</li>
+<li>Open the web app</li>
+<li>Run Playwright tests</li>
+<li>See automated testing magic!</li>
 </ol>
 </div>
 
@@ -420,17 +432,13 @@ layout: center
 class: text-center text-white
 ---
 
-# Questions?
+# Thank you for listening!
 
 <div class="mt-8">
 <h3 class="text-lg mb-4">Resources</h3>
 <ul class="text-sm space-y-2">
 <li>🔗 <a href="https://playwright.dev/go" target="_blank">playwright.dev/go</a></li>
 <li>📚 <a href="https://github.com/playwright-community/playwright-go" target="_blank">GitHub: playwright-community/playwright-go</a></li>
-<li>📖 <a href="https://playwright.dev/go/docs/intro" target="_blank">Documentation</a></li>
+<li>📖 <a href="https://pkg.go.dev/github.com/playwright-community/playwright-go" target="_blank">Go Package Documentation</a></li>
 </ul>
-</div>
-
-<div class="mt-8">
-<span class="text-sm text-gray-300">Thank you!</span>
 </div>
