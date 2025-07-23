@@ -393,6 +393,7 @@ Let's see our tests in action
 <div>
 <h3 class="text-lg font-bold mb-4 text-blue-600">Demo Steps</h3>
 <ol class="text-sm space-y-2">
+<li>Install Playwright drivers</li>
 <li>Start the Go server</li>
 <li>Open the web app</li>
 <li>Run Playwright tests</li>
@@ -403,6 +404,8 @@ Let's see our tests in action
 <div>
 <h3 class="text-lg font-bold mb-4 text-green-600">Commands</h3>
 <div class="text-sm space-y-2">
+<div><code>go install github.com/playwright-community/playwright-go/cmd/playwright@v0.5200.0</code></div>
+<div><code>playwright install --with-deps</code></div>
 <div><code>go run server.go</code></div>
 <div><code>go test -v</code></div>
 <div><code>go test -v TestButtonClick</code></div>

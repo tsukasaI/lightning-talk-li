@@ -48,6 +48,10 @@ cd sample
 # Install Go dependencies
 go mod tidy
 
+# Install Playwright browser drivers (required before running tests)
+go install github.com/playwright-community/playwright-go/cmd/playwright@v0.5200.0
+playwright install --with-deps
+
 # Run the demo web server
 go run server.go
 ```
