@@ -126,7 +126,6 @@ How Go developers can leverage browser automation
 <li>✅ Modern Go-friendly API</li>
 <li>✅ Auto-waiting built-in</li>
 <li>✅ Zero-config cross-browser testing</li>
-<li>❌ Community-maintained</li>
 </ul>
 </div>
 
@@ -145,18 +144,18 @@ Why Playwright is the better choice for Go
 <div class="grid grid-cols-2 gap-8 mt-8">
 
 <div>
-<h3 class="text-lg font-bold mb-4 text-orange-600">Selenium</h3>
+<h3 class="text-lg font-bold mb-4 text-orange-600">Selenium Setup</h3>
 
 ```go
-// Manual waits required
-driver.FindElement(By.ID("submit")).Click()
-time.Sleep(2 * time.Second)
-
 // Complex setup & browser management
 caps := selenium.Capabilities{
     "browserName": "chrome",
 }
 driver, err := selenium.NewRemote(caps, "")
+
+// Manual waits required
+driver.FindElement(By.ID("submit")).Click()
+time.Sleep(2 * time.Second)
 
 // Manual element state checking
 element := driver.FindElement(By.ID("button"))
@@ -168,16 +167,16 @@ if element.IsEnabled() {
 </div>
 
 <div>
-<h3 class="text-lg font-bold mb-4 text-blue-600">Playwright</h3>
+<h3 class="text-lg font-bold mb-4 text-blue-600">Playwright Setup</h3>
 
 ```go
-// Auto-waiting built-in
-page.Click("#submit")
-
 // Simple setup
 pw, err := playwright.Run()
 browser, err := pw.Chromium.Launch()
 page, err := browser.NewPage()
+
+// Auto-waiting built-in
+page.Click("#submit")
 
 // Intelligent waiting - no manual checks
 page.Click("#button") // Waits automatically
