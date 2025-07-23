@@ -212,31 +212,28 @@ Simple Go web server for testing demonstrations
 ```go
 func main() {
     http.HandleFunc("/", handleHome)
-    fmt.Println("Server starting on http://localhost:8080")
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
     html := `<!DOCTYPE html>
-<html>
-<body>
+<html><body>
     <h1>Playwright Demo App</h1>
     <div id="text-display">Hello, World!</div>
     <button id="change-button">Change Text</button>
     <script>
         // JavaScript cycles through messages on button click
         const messages = ["Hello, World!", "Welcome to Playwright Testing!", 
-                         "Go + Playwright = Amazing!", /* ... */];
+                         "Go + Playwright = Amazing!"];
         // Button click handler updates text content
     </script>
-</body>
-</html>`
+</body></html>`
     w.Write([]byte(html))
 }
 ```
 
-<div class="bg-blue-900 bg-opacity-50 p-4 rounded mt-4 text-white">
-<strong>Key elements:</strong> Simple HTTP server serving HTML with interactive button and text display for testing
+<div class="bg-blue-600 bg-opacity-40 p-4 rounded-lg mt-4 text-white border border-blue-400">
+<strong>Key elements:</strong> Simple HTTP server serving HTML with interactive button and text display for testing. Go unit tests alone cannot test the text-display content updating since it requires browser JavaScript execution.
 </div>
 
 ---
