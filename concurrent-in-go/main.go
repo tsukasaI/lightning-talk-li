@@ -2,7 +2,7 @@ package main
 
 func main() {}
 
-func moveZeroToTain(nums []int) {
+func moveZeroToTail(nums []int) {
 	// left: loop index
 	// right: determine non-zero position
 	left, right := 0, 0
